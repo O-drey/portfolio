@@ -5,6 +5,7 @@ import HeaderMobile from "./HeaderMobile";
 import { useMenu } from "@/app/composables/useMenu";
 
 import logo from "@/app/assets/logo.png";
+import Link from "next/link";
 
 export default function Header() {
   const { menu: menus } = useMenu();
@@ -23,12 +24,17 @@ export default function Header() {
       <Searchbar text="" />
       <div className="hidden md:flex items-center space-x-1">
         {menus.map((menu, index) => (
-          <a href={menu.link} key={index}>
+          <Link
+            aria-current="page"
+            href={menu.link}
+            key={index}
+            // className={active ? "text-white" : ""}
+          >
             <div className="hover:bg-yellow-400/40 p-2 transition-colors duration-150 rounded-md">
               {/* {menu.icon} */}
               <span>{menu.title}</span>
             </div>
-          </a>
+          </Link>
         ))}
       </div>
       <HeaderMobile />

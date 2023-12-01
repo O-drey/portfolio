@@ -11,10 +11,10 @@ export const useMenu = () => {
       icon: HomeIcon,
     },
     {
-      value: "categories",
+      value: "subjects",
       title: "Idées",
       description: "Retrouvez toutes les idées de projets",
-      link: "/projects",
+      link: "/subjects",
       icon: LightBulbIcon,
     },
     {
